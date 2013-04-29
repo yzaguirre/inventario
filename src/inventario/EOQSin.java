@@ -4,6 +4,8 @@
  */
 package inventario;
 
+import graficas.PanelGrafica;
+
 /**
  *
  * @author Yo
@@ -18,6 +20,7 @@ public class EOQSin extends javax.swing.JFrame {
         initComponents();
         jPanel4.setVisible(false);
         jPanel5.setVisible(false);
+        jLabel13.setVisible(false);
     }
 
     /**
@@ -49,6 +52,7 @@ public class EOQSin extends javax.swing.JFrame {
         jTextField11 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -129,7 +133,7 @@ public class EOQSin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
         jPanel5Layout.setVerticalGroup(
@@ -143,6 +147,9 @@ public class EOQSin extends javax.swing.JFrame {
         );
 
         jLabel12.setText("Unidad de Producto");
+
+        jLabel13.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel13.setText("Ingrese Numeros");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -180,13 +187,16 @@ public class EOQSin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(jLabel13))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(jButton1)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -214,9 +224,11 @@ public class EOQSin extends javax.swing.JFrame {
                 .addComponent(jRadioButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -338,14 +350,17 @@ public class EOQSin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       if(jRadioButton1.isSelected()){       
+       try{
+        if(jRadioButton1.isSelected()){       
        Double numero1=Double.parseDouble(this.jTextField1.getText());
        Double numero2=Double.parseDouble(this.jTextField3.getText());
        Double numero3=Double.parseDouble(this.jTextField10.getText());
        Double numero4=Double.parseDouble(this.jTextField4.getText());
+       Double numero5=Double.parseDouble(this.jTextField2.getText());
        Double resultado1, resultado2;
        Double resultado3, resultado4;
        Double resultado5, resultado6;
+       Double resultado7;
        resultado1= 2*numero1*numero2;
        resultado2= resultado1/numero3;
        resultado3=Math.sqrt(resultado2);
@@ -356,25 +371,38 @@ public class EOQSin extends javax.swing.JFrame {
        jTextField7.setText(Double.toString(resultado5));
        resultado6=numero1*numero4; 
        jTextField8.setText(Double.toString(resultado6));
+       resultado7=(numero5*numero1)+(numero2*numero1)/resultado3+(numero3*resultado3)/2;
+       jTextField9.setText(Double.toString(resultado7));
        }
        if(jRadioButton2.isSelected()){
            Double numero1=Double.parseDouble(this.jTextField1.getText());
            Double numero2=Double.parseDouble(this.jTextField3.getText());
            Double numero3=Double.parseDouble(this.jTextField11.getText());
            Double numero4=Double.parseDouble(this.jTextField4.getText());
+           Double numero5=Double.parseDouble(this.jTextField2.getText());
            Double resultado1, resultado2;
-           Double resultado3, resultado4;
+           Double Qoptimo, resultado4;
            Double resultado5, resultado6;
+           Double resultado7, resultado8;
            resultado1= 2*numero1*numero2;
-           resultado2= resultado1/numero3;
-           resultado3=Math.sqrt(resultado2);
-           jTextField5.setText(Double.toString(resultado3));
-           resultado4=numero1/resultado3;
+           resultado7=numero5*numero3;
+           resultado2= resultado1/resultado7;
+           Qoptimo=Math.sqrt(resultado2);
+           jTextField5.setText(Double.toString(Qoptimo));
+           resultado4=numero1/Qoptimo;
            jTextField6.setText(Double.toString(resultado4));
-           resultado5=resultado3/numero1;
+           resultado5=Qoptimo/numero1;
            jTextField7.setText(Double.toString(resultado5));
            resultado6=numero1*numero4; 
            jTextField8.setText(Double.toString(resultado6));
+           resultado8=(numero5*numero1)+(numero2*numero1)/Qoptimo+(resultado7*Qoptimo)/2;
+           jTextField9.setText(Double.toString(resultado8));
+           PanelGrafica pg = new PanelGrafica(Qoptimo, 0, "Grafica", jTextField12.getText());
+           this.getContentPane().add(pg.getPanel());
+       }
+       }catch(Exception e){
+           jLabel13.setVisible(true);
+           
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -391,6 +419,13 @@ public class EOQSin extends javax.swing.JFrame {
         jTextField9.setText(null);
         jTextField10.setText(null);
         jTextField11.setText(null);
+        jTextField12.setText(null);
+        
+        jLabel13.setVisible(false);
+        jPanel4.setVisible(false);
+        jPanel5.setVisible(false);
+        jRadioButton2.setSelected(false);
+        jRadioButton1.setSelected(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -452,6 +487,7 @@ public class EOQSin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -26,7 +26,8 @@ public class PanelGrafica {
     /**
      * Q'
      **/
-    private double Q;
+    private double Q, minimo;
+    private double inventarioMedio;
     /**
      * Titulo de la grafica
      **/
@@ -45,8 +46,10 @@ public class PanelGrafica {
      * @param tituloY Titulo del eje Y
      *
      **/
-    public PanelGrafica(double Q, String titulo, String tituloY) {
+    public PanelGrafica(double Q, double minimo, String titulo, String tituloY) {
         this.Q = Q;
+        this.minimo = minimo;
+        this.inventarioMedio = (Q + minimo)/2;
         this.titulo = titulo;
         this.tituloY = tituloY;
         fechaHoy = new Day();
@@ -55,7 +58,7 @@ public class PanelGrafica {
      * @return Panel con la grafica 
      **/
     public JPanel getPanel(){
-        XYDataset xydataset = createDatasetInventario("Demanda", Q, 0D, 
+        XYDataset xydataset = createDatasetInventario("Demanda", Q, minimo, 
                 fechaHoy);
         JFreeChart jfreechart = createChart(titulo, xydataset);
         
@@ -123,8 +126,8 @@ public class PanelGrafica {
         tpv.add(rtp_variable, minimo);
         
         TimePeriodValues tpv2 = new TimePeriodValues("Inventario Promedio");
-        tpv2.add(rtp_fechaHoy, maximo/2);
-        tpv2.add(rtp_variable, maximo/2);
+        tpv2.add(rtp_fechaHoy, inventarioMedio);
+        tpv2.add(rtp_variable, inventarioMedio);
         
         TimePeriodValuesCollection tpvc = new TimePeriodValuesCollection();
         tpvc.addSeries(tpv);

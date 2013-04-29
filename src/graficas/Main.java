@@ -16,7 +16,7 @@ public class Main extends ApplicationFrame{
         String tituloProblema = "Comedor Ingeniería";
         String unidades = "Lb. de carne";
         
-        JPanel jpanel = (new PanelGrafica(Q, tituloProblema, unidades)).getPanel();
+        JPanel jpanel = (new PanelGrafica(Q, -400D, tituloProblema, unidades)).getPanel();
         setContentPane(jpanel);
     }
     public static void main(String args[]) {

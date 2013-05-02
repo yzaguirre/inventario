@@ -4,6 +4,10 @@
  */
 package inventario;
 
+import graficas.PanelGrafica;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
 /**
  *
  * @author Yo
@@ -18,6 +22,7 @@ public class EOPSin extends javax.swing.JFrame {
         jPanel4.setVisible(false);
         jPanel5.setVisible(false);
         jLabel17.setVisible(false);
+        jpgrafica.setSize(new Dimension (100,50));
     }
 
     /**
@@ -71,6 +76,7 @@ public class EOPSin extends javax.swing.JFrame {
         jTextField15 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jTextField16 = new javax.swing.JTextField();
+        jpgrafica = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,8 +120,8 @@ public class EOPSin extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -171,29 +177,14 @@ public class EOPSin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
-                                .addGap(28, 28, 28)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                    .addComponent(jTextField1)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                                    .addComponent(jTextField3))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                            .addComponent(jTextField3))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -206,7 +197,20 @@ public class EOPSin extends javax.swing.JFrame {
                                 .addComponent(jLabel12)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(25, 25, 25))))
+                        .addGap(25, 25, 25))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(37, 37, 37)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                    .addComponent(jTextField2))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -257,14 +261,13 @@ public class EOPSin extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11))
+                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel17)
-                        .addGap(23, 23, 23)))
+                        .addComponent(jLabel17)))
+                .addGap(11, 11, 11)
                 .addComponent(jButton1)
-                .addGap(28, 28, 28))
+                .addContainerGap())
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18))); // NOI18N
@@ -336,7 +339,7 @@ public class EOPSin extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel16)))
-                .addGap(0, 94, Short.MAX_VALUE))
+                .addGap(0, 149, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -392,6 +395,9 @@ public class EOPSin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpgrafica.setBorder(javax.swing.BorderFactory.createTitledBorder("Grafica"));
+        jpgrafica.setLayout(new java.awt.BorderLayout());
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -399,18 +405,30 @@ public class EOPSin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(86, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jpgrafica, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(199, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jpgrafica, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                        .addGap(47, 47, 47))))
         );
 
         pack();
@@ -425,28 +443,31 @@ public class EOPSin extends javax.swing.JFrame {
             Double numero4 = Double.parseDouble(this.jTextField4.getText());
             Double numero5 = Double.parseDouble(this.jTextField13.getText());
             Double numero6 = Double.parseDouble(this.jTextField2.getText());
-            Double resultado1, resultado2;
+            Double resultado1, Qoptima;
             Double resultado3, resultado4;
             Double resultado5, resultado6;
             Double resultado7, resultado8;
             Double resultado9;
             resultado1 = (2 * numero1 * numero2)/(numero3*(1-(numero1/numero5)));
-            resultado2 = Math.sqrt(resultado1);
-            jTextField5.setText(Double.toString(resultado2));
-            resultado3 = numero1/resultado2;
+            Qoptima = Math.sqrt(resultado1);
+            jTextField5.setText(Double.toString(Qoptima));
+            resultado3 = numero1/Qoptima;
             jTextField6.setText(Double.toString(resultado3));
-            resultado4=resultado2/numero1;
+            resultado4=Qoptima/numero1;
             jTextField7.setText(Double.toString(resultado4));
             resultado5=numero1*numero4;
             jTextField8.setText(Double.toString(resultado5));
-            resultado6=resultado2/numero5;
+            resultado6=Qoptima/numero5;
             jTextField14.setText(Double.toString(resultado6));
             resultado7=resultado6+resultado4;
             jTextField15.setText(Double.toString(resultado7));
             resultado8=resultado6*(numero5-numero1);
             jTextField16.setText(Double.toString(resultado8));
-            resultado9=(numero6*numero1)+(numero2*numero1)/resultado2+((numero3*resultado2)/2)*(1-resultado6);
+            resultado9=(numero6*numero1)+(numero2*numero1)/Qoptima+((numero3*Qoptima)/2)*(1-resultado6);
             jTextField9.setText(Double.toString(resultado9));
+            PanelGrafica pg = new PanelGrafica(Qoptima, 0, "Grafica", jTextField12.getText());
+            this.jpgrafica.add(pg.getPanel(), BorderLayout.CENTER);
+            this.jpgrafica.validate();
         }
         if (jRadioButton2.isSelected()) {
             Double numero1 = Double.parseDouble(this.jTextField1.getText());
@@ -455,29 +476,32 @@ public class EOPSin extends javax.swing.JFrame {
             Double numero5 = Double.parseDouble(this.jTextField13.getText());
             Double numero6 = Double.parseDouble(this.jTextField2.getText());
             Double numero7 = Double.parseDouble(this.jTextField11.getText());
-            Double resultado1, resultado2;
+            Double resultado1, Qoptima;
             Double resultado3, resultado4;
             Double resultado5, resultado6;
             Double resultado7, resultado8;
             Double resultado9, resultado10;
             resultado10 = numero6*numero7;
             resultado1 = (2 * numero1 * numero2)/(resultado10*(1-(numero1/numero5)));
-            resultado2 = Math.sqrt(resultado1);
-            jTextField5.setText(Double.toString(resultado2));
-            resultado3 = numero1/resultado2;
+            Qoptima = Math.sqrt(resultado1);
+            jTextField5.setText(Double.toString(Qoptima));
+            resultado3 = numero1/Qoptima;
             jTextField6.setText(Double.toString(resultado3));
-            resultado4=resultado2/numero1;
+            resultado4=Qoptima/numero1;
             jTextField7.setText(Double.toString(resultado4));
             resultado5=numero1*numero4;
             jTextField8.setText(Double.toString(resultado5));
-            resultado6=resultado2/numero5;
+            resultado6=Qoptima/numero5;
             jTextField14.setText(Double.toString(resultado6));
             resultado7=resultado6+resultado4;
             jTextField15.setText(Double.toString(resultado7));
             resultado8=resultado6*(numero5-numero1);
             jTextField16.setText(Double.toString(resultado8));
-            resultado9=(numero6*numero1)+(numero2*numero1)/resultado2+((resultado10*resultado2)/2)*(1-resultado6);
+            resultado9=(numero6*numero1)+(numero2*numero1)/Qoptima+((resultado10*Qoptima)/2)*(1-resultado6);
             jTextField9.setText(Double.toString(resultado9));
+            PanelGrafica pg = new PanelGrafica(Qoptima, 0, "Grafica", jTextField12.getText());
+            this.jpgrafica.add(pg.getPanel(), BorderLayout.CENTER);
+            this.jpgrafica.validate();
         }
         }catch(Exception e){
             jLabel17.setVisible(false);
@@ -608,5 +632,6 @@ public class EOPSin extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel jpgrafica;
     // End of variables declaration//GEN-END:variables
 }
